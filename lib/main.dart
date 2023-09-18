@@ -6,11 +6,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
+import 'package:lionsaid_app_template/page/color_theme_screen.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 
 import 'config/global_variable.dart';
+import 'page/MultipleContainersWithAnimations.dart';
 import 'page/home_screen.dart';
+import 'page/matrix_images_screen.dart';
 import 'page/splash_screen.dart';
+import 'page/text_theme_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,6 +53,30 @@ final GoRouter _router = GoRouter(
             path: 'home',
             builder: (BuildContext context, GoRouterState state) {
               return const HomeScreen();
+            },
+          ),
+          GoRoute(
+            path: 'matrixImagesWidget',
+            builder: (BuildContext context, GoRouterState state) {
+              return const MatrixImagesWidget();
+            },
+          ),
+          GoRoute(
+            path: 'scrollableScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return MultipleContainersWithAnimations();
+            },
+          ),
+          GoRoute(
+            path: 'textThemeScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return const TextThemeScreen();
+            },
+          ),
+          GoRoute(
+            path: 'ColorThemeScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return const ColorThemeScreen();
             },
           )
         ]),

@@ -1,8 +1,10 @@
+import 'dart:convert';
+
 import 'package:badges/badges.dart' as badges;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:full_screen_menu/full_screen_menu.dart';
 import 'package:go_router/go_router.dart';
 
 import '../config/global_variable.dart';
@@ -15,23 +17,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _cartBadgeAmount = 3;
   Color color = Colors.red;
 
-  List<Widget> successList = [];
+  List<dynamic> successList = [];
   bool multiple = true;
   bool isError = false;
 
   @override
   void initState() {
-    //print(page);
     EasyLoading.show(
       status: tr('hint.text011'),
       maskType: EasyLoadingMaskType.none,
       dismissOnTap: false,
     );
+    loadString();
     EasyLoading.dismiss();
     super.initState();
+  }
+
+  loadString() {
+    // 将 JSON 字符串解析为 Dart 对象
+    rootBundle.loadString('assets/data/home.json').then((value) => {
+          setState(() {
+            successList = json.decode(value)['data'];
+          })
+        });
   }
 
   @override
@@ -64,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottom: _tabBar(),
                   ),
                   body: GridView(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      padding: const EdgeInsets.all(10),
                       physics: const BouncingScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: crossAxisCount,
@@ -74,12 +84,51 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       children: [
                         ...successList.map((item) {
-                          return InkWell(
-                            onTap: () {
-                              //context.go(item.route);
-                            },
-                            child: Text("1"),
-                          );
+                          return Container(
+                              color: Theme.of(context).colorScheme.primary,
+                              child: InkWell(
+                                  onTap: () {
+                                    context.go(item['route']);
+                                  },
+                                  child: Column(children: [
+                                    Expanded(
+                                        child: Container(
+                                            decoration: BoxDecoration(
+                                      // 使用 BoxDecoration 来设置背景图片
+                                      image: DecorationImage(
+                                        image:
+                                            AssetImage(item['decorationImage']),
+                                        // 背景图片的路径
+                                        fit: BoxFit.cover, // 图片填充方式，可以根据需要调整
+                                      ),
+                                    ))),
+                                    Container(
+                                      width: constraints.maxWidth,
+                                      color: Colors.white70.withOpacity(0.3),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, bottom: 5),
+                                              child: Text(item['title'],
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleSmall)),
+                                          Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, bottom: 5),
+                                              child: Text(
+                                                item['describe'],
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodySmall,
+                                              )),
+                                        ],
+                                      ),
+                                    )
+                                  ])));
                         }).toList(),
                       ])
                   //_addRemoveCartButtons(),

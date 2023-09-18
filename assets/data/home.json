@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "title": "图片矩阵",
+      "route": "/matrixImagesWidget",
+      "describe": "展示一个图片矩阵",
+      "decorationImage": "assets/images/WX20230918-141924@2x.png"
+    },
+    {
+      "title": "渐变隐藏",
+      "route": "/scrollableScreen",
+      "describe": "展示一个渐变隐藏",
+      "decorationImage": "assets/images/WX20230918-141924@2x.png"
+    },
+    {
+      "title": "主题文本",
+      "route": "/textThemeScreen",
+      "describe": "展示文本主题",
+      "decorationImage": "assets/images/WX20230918-160658@2x.png"
+    },
+    {
+      "title": "主题色彩",
+      "route": "/ColorThemeScreen",
+      "describe": "展示色彩主题",
+      "decorationImage": "assets/images/WX20230918-165443@2x.png"
+    }
+  ]
+}
