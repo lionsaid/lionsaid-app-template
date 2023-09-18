@@ -63,6 +63,8 @@ class _MyImageListState extends State<TextThemeScreen> {
                     style: textStyle,
                   ),
                   onTap: () => {
+                    EasyLoading.showToast(
+                        "Text($_exampleString,style: Theme.of(context).textTheme.$key,)")
                   },
                 ),
               ],

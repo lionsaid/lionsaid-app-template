@@ -7,12 +7,6 @@
       "decorationImage": "assets/images/WX20230918-141924@2x.png"
     },
     {
-      "title": "渐变隐藏",
-      "route": "/scrollableScreen",
-      "describe": "展示一个渐变隐藏",
-      "decorationImage": "assets/images/WX20230918-141924@2x.png"
-    },
-    {
       "title": "主题文本",
       "route": "/textThemeScreen",
       "describe": "展示文本主题",

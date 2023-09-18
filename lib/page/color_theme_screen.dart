@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 
 class ColorThemeScreen extends StatefulWidget {
@@ -75,12 +76,18 @@ class _MyImageListState extends State<ColorThemeScreen> {
                     key,
                   ),
                 ),
-                Container(
-                  height: 30,
-                  width: 150,
-                  color: color,
-                  child: Text(color.toString()),
-                ),
+                InkWell(
+                  child: Container(
+                    height: 30,
+                    width: 150,
+                    color: color,
+                    child: Text(color.toString()),
+                  ),
+                  onTap: () => {
+                    EasyLoading.showToast(
+                        "Container(  height: 30,width: 150, color: Theme.of(context).colorScheme.$key,  child: Text($color),)")
+                  },
+                )
               ],
             );
           }).toList())
