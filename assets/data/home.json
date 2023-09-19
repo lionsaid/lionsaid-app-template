@@ -17,6 +17,18 @@
       "route": "/ColorThemeScreen",
       "describe": "展示色彩主题",
       "decorationImage": "assets/images/WX20230918-165443@2x.png"
+    },
+    {
+      "title": "IconList",
+      "route": "/IconListScreen",
+      "describe": "展示色彩主题",
+      "decorationImage": "assets/images/WX20230918-165443@2x.png"
+    },
+    {
+      "title": "Container Example",
+      "route": "/ContainerExampleScreen",
+      "describe": "展示色彩主题",
+      "decorationImage": "assets/images/WX20230918-165443@2x.png"
     }
   ]
 }
