@@ -11,11 +11,11 @@
 
 ```
 
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
-![img_3.png](img_3.png)
+![img.png](README/img.png)
+![img_1.png](README/img_1.png)
+![img_2.png](README/img_2.png)
+![img_4.png](README/img_4.png)
+![img_5.png](README/img_5.png)
+![img_3.png](README/img_3.png)
 
 
