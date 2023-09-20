@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 import 'package:lionsaid_app_template/page/color_theme_screen.dart';
 import 'package:lionsaid_app_template/page/container_example_screen.dart';
+import 'package:lionsaid_app_template/page/scroll_listener_screen.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 
 import 'config/global_variable.dart';
@@ -84,6 +85,12 @@ final GoRouter _router = GoRouter(
             path: 'ContainerExampleScreen',
             builder: (BuildContext context, GoRouterState state) {
               return const ContainerExampleScreen();
+            },
+          ),
+          GoRoute(
+            path: 'ScrollListenerScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return ScrollListenerScreen();
             },
           ),
         ]),

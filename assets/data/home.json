@@ -23,6 +23,12 @@
       "route": "/ContainerExampleScreen",
       "describe": "展示Container ",
       "decorationImage": "assets/images/img_8.png"
+    },
+    {
+      "title": "ScrollListener Example",
+      "route": "/ScrollListenerScreen",
+      "describe": "滚动监听器 ",
+      "decorationImage": "assets/images/img_8.png"
     }
   ]
 }
