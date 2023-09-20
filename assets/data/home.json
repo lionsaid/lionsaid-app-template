@@ -25,10 +25,10 @@
       "decorationImage": "assets/images/img_8.png"
     },
     {
-      "title": "ScrollListener Example",
+      "title": "监控容器在当前屏幕的显示比例",
       "route": "/ScrollListenerScreen",
-      "describe": "滚动监听器 ",
-      "decorationImage": "assets/images/img_8.png"
+      "describe": "监控容器在当前屏幕的显示比例，当比例大于0.35时修改title的名称",
+      "decorationImage": "assets/images/img_9.png"
     }
   ]
 }
