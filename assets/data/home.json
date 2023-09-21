@@ -29,6 +29,24 @@
       "route": "/ScrollListenerScreen",
       "describe": "监控容器在当前屏幕的显示比例，当比例大于0.35时修改title的名称",
       "decorationImage": "assets/images/img_9.png"
+    },
+    {
+      "title": "绘制一个环形，上边是红色，下边是蓝色",
+      "route": "/RotatingHalfCircle",
+      "describe": "绘制一个环形，上边是红色，下边是蓝色，并在点击时旋转180度",
+      "decorationImage": "assets/images/img_9.png"
+    },
+    {
+      "title": "位移效果",
+      "route": "/MyAnimatedPositionedWidget",
+      "describe": "实现位移效果",
+      "decorationImage": "assets/images/img_10.png"
+    },
+    {
+      "title": "旋转效果",
+      "route": "/MyRotatingWidget",
+      "describe": "实现旋转效果",
+      "decorationImage": "assets/images/img_10.png"
     }
   ]
 }

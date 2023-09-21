@@ -13,8 +13,11 @@ import 'package:path_provider/path_provider.dart' as pathProvider;
 
 import 'config/global_variable.dart';
 import 'page/MultipleContainersWithAnimations.dart';
+import 'page/animation_effects/MyAnimatedPositionedWidget.dart';
+import 'page/animation_effects/MyRotatingWidget.dart';
 import 'page/home_screen.dart';
 import 'page/matrix_images_screen.dart';
+import 'page/rotating_half_circle.dart';
 import 'page/splash_screen.dart';
 import 'page/text_theme_screen.dart';
 
@@ -91,6 +94,24 @@ final GoRouter _router = GoRouter(
             path: 'ScrollListenerScreen',
             builder: (BuildContext context, GoRouterState state) {
               return ScrollListenerScreen();
+            },
+          ),
+          GoRoute(
+            path: 'RotatingHalfCircle',
+            builder: (BuildContext context, GoRouterState state) {
+              return RotatingHalfCircle();
+            },
+          ),
+          GoRoute(
+            path: 'MyAnimatedPositionedWidget',
+            builder: (BuildContext context, GoRouterState state) {
+              return MyAnimatedPositionedWidget();
+            },
+          ),
+          GoRoute(
+            path: 'MyRotatingWidget',
+            builder: (BuildContext context, GoRouterState state) {
+              return MyRotatingWidget();
             },
           ),
         ]),
