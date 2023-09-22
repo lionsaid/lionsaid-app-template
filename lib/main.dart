@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
+import 'package:lionsaid_app_template/page/basic_components/basic_border.dart';
 import 'package:lionsaid_app_template/page/color_theme_screen.dart';
 import 'package:lionsaid_app_template/page/container_example_screen.dart';
 import 'package:lionsaid_app_template/page/scroll_listener_screen.dart';
@@ -15,6 +16,7 @@ import 'config/global_variable.dart';
 import 'page/MultipleContainersWithAnimations.dart';
 import 'page/animation_effects/MyAnimatedPositionedWidget.dart';
 import 'page/animation_effects/MyRotatingWidget.dart';
+import 'page/basic_components/basic_button.dart';
 import 'page/home_screen.dart';
 import 'page/matrix_images_screen.dart';
 import 'page/rotating_half_circle.dart';
@@ -112,6 +114,18 @@ final GoRouter _router = GoRouter(
             path: 'MyRotatingWidget',
             builder: (BuildContext context, GoRouterState state) {
               return MyRotatingWidget();
+            },
+          ),
+          GoRoute(
+            path: 'BasicButtonScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return BasicButtonScreen();
+            },
+          ),
+          GoRoute(
+            path: 'BasicBorderScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return BasicBorderScreen();
             },
           ),
         ]),

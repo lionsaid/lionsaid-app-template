@@ -47,6 +47,18 @@
       "route": "/MyRotatingWidget",
       "describe": "实现旋转效果",
       "decorationImage": "assets/images/img_10.png"
+    },
+    {
+      "title": "基本按钮",
+      "route": "/BasicButtonScreen",
+      "describe": "展示flutter button",
+      "decorationImage": "assets/images/img_11.png"
+    },
+    {
+      "title": "基本边框",
+      "route": "/BasicBorderScreen",
+      "describe": "展示flutter button",
+      "decorationImage": "assets/images/img_11.png"
     }
   ]
 }
