@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -16,6 +17,7 @@ import 'config/global_variable.dart';
 import 'page/MultipleContainersWithAnimations.dart';
 import 'page/animation_effects/MyAnimatedPositionedWidget.dart';
 import 'page/animation_effects/MyRotatingWidget.dart';
+import 'page/basic_components/basic_appbar.dart';
 import 'page/basic_components/basic_button.dart';
 import 'page/home_screen.dart';
 import 'page/matrix_images_screen.dart';
@@ -128,6 +130,12 @@ final GoRouter _router = GoRouter(
               return BasicBorderScreen();
             },
           ),
+          GoRoute(
+            path: 'BasicAppBarScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return BasicAppBarScreen();
+            },
+          ),
         ]),
   ],
 );
@@ -141,9 +149,45 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       routerConfig: _router,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: ThemeData.light(useMaterial3: true),
-      darkTheme: ThemeData.dark(useMaterial3: true),
+      themeMode: ThemeMode.dark,
+      // This theme was made for FlexColorScheme version 6.1.1. Make sure
+// you use same or higher version, but still same major version. If
+// you use a lower version, some properties may not be supported. In
+// that case you can also remove them after copying the theme to your app.
+      theme: FlexThemeData.light(
+        scheme: FlexScheme.aquaBlue,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 9,
+        subThemesData: const FlexSubThemesData(
+          blendOnLevel: 10,
+          blendOnColors: false,
+          blendTextTheme: false,
+          cardRadius: 37.0,
+        ),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
+        useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        // To use the playground font, add GoogleFonts package and uncomment
+        // fontFamily: GoogleFonts.notoSans().fontFamily,
+      ),
+      darkTheme: FlexThemeData.dark(
+        scheme: FlexScheme.aquaBlue,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 15,
+        subThemesData: const FlexSubThemesData(
+          blendOnLevel: 20,
+          cardRadius: 37.0,
+        ),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
+        useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        // To use the Playground font, add GoogleFonts package and uncomment
+        // fontFamily: GoogleFonts.notoSans().fontFamily,
+      ),
+// If you do not have a themeMode switch, uncomment this line
+// to let the device system mode control the theme mode:
+// themeMode: ThemeMode.system,
+
       builder: EasyLoading.init(),
     );
   }

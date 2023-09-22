@@ -57,8 +57,14 @@
     {
       "title": "基本边框",
       "route": "/BasicBorderScreen",
-      "describe": "展示flutter button",
-      "decorationImage": "assets/images/img_11.png"
+      "describe": "展示flutter 边框/圆角/阴影",
+      "decorationImage": "assets/images/img_12.png"
+    },
+    {
+      "title": "基本AppBar",
+      "route": "/BasicAppBarScreen",
+      "describe": "展示flutter AppBar",
+      "decorationImage": "assets/images/img_13.png"
     }
   ]
 }

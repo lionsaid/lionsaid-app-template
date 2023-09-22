@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../utils/random_util.dart';
+
 class BasicBorderScreen extends StatefulWidget {
   const BasicBorderScreen({super.key});
 
@@ -20,11 +22,10 @@ class _BasicBorderState extends State<BasicBorderScreen> {
       {"error": Theme.of(context).colorScheme.error},
       {"outline": Theme.of(context).colorScheme.outline},
       {"shadow": Theme.of(context).colorScheme.shadow},
-      {"scrim": Theme.of(context).colorScheme.scrim},
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('basic 按钮'),
+        title: const Text('basic 边框'),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios_new,
@@ -36,42 +37,114 @@ class _BasicBorderState extends State<BasicBorderScreen> {
       body: ListView(children: [
         Card(
             child: SizedBox(
-                height: 200,
+                height: 150,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const Text(
-                          "PopupMenuButton：这是一个弹出式菜单按钮，当用户点击它时，会显示一个弹出菜单，用户可以从中选择一个选项。"),
+                      const Text("定义了一个宽度为5.0的边框，并指定了边框的颜色"),
                       SizedBox(
-                          height: 50, // 指定一个固定的高度
+                          height: 100, // 指定一个固定的高度
                           child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: list.map((map) {
                                 String key = map.keys.first; // 获取Map中的键
-                                final color = map[key]; // 获取文本样式
-                                return PopupMenuButton<String>(
-                                  color: color,
-                                  onSelected: (value) {
-                                    // 当用户选择一个选项时执行的代码
-                                    print('选择了选项: $value');
-                                  },
-                                  itemBuilder: (BuildContext context) {
-                                    // 构建弹出菜单的选项
-                                    return <PopupMenuEntry<String>>[
-                                      PopupMenuItem<String>(
-                                        value: 'option1',
-                                        child: Text('选项 1'),
+                                Color color = map[key]!; // 获取文本样式
+                                return Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: getRandomColor(),
+                                    border: Border.all(
+                                      color: color, // 边框颜色
+                                      width: 10.0, // 边框宽度
+                                    ),
+                                  ),
+                                );
+                              }).toList()))
+                    ]))),
+        Card(
+            child: SizedBox(
+                height: 150,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text("定义上边框的颜色"),
+                      SizedBox(
+                          height: 100, // 指定一个固定的高度
+                          child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: list.map((map) {
+                                String key = map.keys.first; // 获取Map中的键
+                                Color color = map[key]!; // 获取文本样式
+                                return Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      color: getRandomColor(),
+                                      border: Border(
+                                        top: BorderSide(
+                                          color: color,
+                                          width: 10.0,
+                                        ),
+                                      )),
+                                );
+                              }).toList()))
+                    ]))),
+        Card(
+            child: SizedBox(
+                height: 150,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text("定义边框的阴影效果"),
+                      SizedBox(
+                          height: 100, // 指定一个固定的高度
+                          child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: list.map((map) {
+                                String key = map.keys.first; // 获取Map中的键
+                                Color color = map[key]!; // 获取文本样式
+                                return Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: color,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: getRandomColor(), // 阴影颜色
+                                        offset: Offset(0, 3), // 阴影偏移量
+                                        blurRadius: 6.0, // 阴影模糊半径
+                                        spreadRadius: 1.0, // 阴影扩散半径
                                       ),
-                                      PopupMenuItem<String>(
-                                        value: 'option2',
-                                        child: Text('选项 2'),
-                                      ),
-                                      PopupMenuItem<String>(
-                                        value: 'option3',
-                                        child: Text('选项 3'),
-                                      ),
-                                    ];
-                                  },
+                                    ],
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(40.0)),
+                                  ),
+                                );
+                              }).toList()))
+                    ]))),
+        Card(
+            child: SizedBox(
+                height: 150,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text("定义边框的圆角效果"),
+                      SizedBox(
+                          height: 100, // 指定一个固定的高度
+                          child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: list.map((map) {
+                                String key = map.keys.first; // 获取Map中的键
+                                Color color = map[key]!; // 获取文本样式
+                                return Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: color,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(40.0)),
+                                  ),
                                 );
                               }).toList()))
                     ]))),
