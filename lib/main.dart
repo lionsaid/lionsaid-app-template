@@ -18,6 +18,7 @@ import 'page/MultipleContainersWithAnimations.dart';
 import 'page/animation_effects/MyAnimatedPositionedWidget.dart';
 import 'page/animation_effects/MyRotatingWidget.dart';
 import 'page/basic_components/basic_appbar.dart';
+import 'page/basic_components/basic_banner_notification.dart';
 import 'page/basic_components/basic_button.dart';
 import 'page/home_screen.dart';
 import 'page/matrix_images_screen.dart';
@@ -134,6 +135,12 @@ final GoRouter _router = GoRouter(
             path: 'BasicAppBarScreen',
             builder: (BuildContext context, GoRouterState state) {
               return BasicAppBarScreen();
+            },
+          ),
+          GoRoute(
+            path: 'BasicBannerNotificationScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return BasicBannerNotificationScreen();
             },
           ),
         ]),

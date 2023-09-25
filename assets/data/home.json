@@ -65,6 +65,12 @@
       "route": "/BasicAppBarScreen",
       "describe": "展示flutter AppBar",
       "decorationImage": "assets/images/img_13.png"
+    },
+    {
+      "title": "横幅通知",
+      "route": "/BasicBannerNotificationScreen",
+      "describe": "展示flutter AppBar",
+      "decorationImage": "assets/images/img_13.png"
     }
   ]
 }
