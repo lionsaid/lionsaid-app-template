@@ -71,6 +71,12 @@
       "route": "/BasicBannerNotificationScreen",
       "describe": "展示flutter AppBar",
       "decorationImage": "assets/images/img_13.png"
+    },
+    {
+      "title": "Dismissible",
+      "route": "/SafeAreaExampleScreen",
+      "describe": "展示flutter AppBar",
+      "decorationImage": "assets/images/img_13.png"
     }
   ]
 }

@@ -9,7 +9,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 import 'package:lionsaid_app_template/page/basic_components/basic_border.dart';
 import 'package:lionsaid_app_template/page/color_theme_screen.dart';
-import 'package:lionsaid_app_template/page/container_example_screen.dart';
+import 'package:lionsaid_app_template/page/flutter_container/container_example_screen.dart';
+import 'package:lionsaid_app_template/page/flutter_container/dismissible_example_screen.dart';
 import 'package:lionsaid_app_template/page/scroll_listener_screen.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 
@@ -141,6 +142,11 @@ final GoRouter _router = GoRouter(
             path: 'BasicBannerNotificationScreen',
             builder: (BuildContext context, GoRouterState state) {
               return BasicBannerNotificationScreen();
+            },
+          ),GoRoute(
+            path: 'SafeAreaExampleScreen',
+            builder: (BuildContext context, GoRouterState state) {
+              return SafeAreaExampleScreen();
             },
           ),
         ]),
